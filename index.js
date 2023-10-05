@@ -3,7 +3,8 @@ import {
   getDatabase,
   ref,
   push,
-  onValue
+  onValue,
+  remove,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -32,11 +33,17 @@ function clearInputFieldEl() {
 }
 
 onValue(shoppingListInDB, function (snapshot) {
-  let itemsArray = Object.values(snapshot.val());
-  clearShopingListEl();
+  if (snapshot.exists()) {
+    let itemsArray = Object.entries(snapshot.val());
+    clearShopingListEl();
 
-  for (let i = 0; i < itemsArray.length; i++) {
-    appendItemToShoppingListEl(itemsArray[i]);
+    for (let i = 0; i < itemsArray.length; i++) {
+      let currentItem = itemsArray[i];
+
+      appendItemToShoppingListEl(currentItem);
+    }
+  } else {
+    shoppingListEl.innerText = "No items here...yet"
   }
 });
 
@@ -44,6 +51,17 @@ function clearShopingListEl() {
   shoppingListEl.innerHTML = "";
 }
 
-function appendItemToShoppingListEl(itemValue) {
-  shoppingListEl.innerHTML += `<li>${itemValue}</li>`;
+function appendItemToShoppingListEl(item) {
+  let itemID = item[0];
+  let itemValue = item[1];
+
+  const newLiEl = document.createElement("li");
+  newLiEl.textContent = itemValue;
+  shoppingListEl.append(newLiEl);
+
+  newLiEl.addEventListener("dblclick", () => {
+    let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
+
+    remove(exactLocationOfItemInDB);
+  });
 }
