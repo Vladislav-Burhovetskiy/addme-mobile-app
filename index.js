@@ -19,6 +19,8 @@ const shoppingListInDB = ref(database, "shoppingList");
 const inputFieldEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-button");
 const shoppingListEl = document.getElementById("shopping-list");
+const deleteBtn = document.getElementById("delete-btn");
+const selectedItems = {};
 
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
@@ -59,9 +61,29 @@ function appendItemToShoppingListEl(item) {
   newLiEl.textContent = itemValue;
   shoppingListEl.append(newLiEl);
 
+  if (selectedItems[itemID]) {
+    newLiEl.classList.add("selected");
+  }
+  
   newLiEl.addEventListener("dblclick", () => {
     let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
 
     remove(exactLocationOfItemInDB);
   });
+
+  newLiEl.addEventListener("click", () => {
+    newLiEl.classList.toggle("selected")
+
+    if (newLiEl.classList.contains("selected")) {
+      selectedItems[itemID] = true;
+    } else {
+      delete selectedItems[itemID];
+    }
+  });
+
 }
+
+deleteBtn.addEventListener("click", () => {
+    remove(shoppingListInDB);
+  }
+);

@@ -31,7 +31,7 @@ input {
     outline-color: #b5caff;
 }
 
-button {
+#add-button {
     color: white;
     text-shadow: 1px 1px 2px #809bff;
     font-weight: 500;
@@ -43,18 +43,20 @@ button {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     margin-bottom: 3px;
+    cursor: pointer;
 }
 
-button:hover {
+#add-button:hover {
   background-color: #ffd685;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 70px;
 }
 
 ul li {
@@ -72,4 +74,27 @@ ul li {
 li:hover {
   background-color: #FFECC7;
   box-shadow: 1px 2px 4px rgba(181, 202, 255, 1);
+}
+
+.selected {
+  background-color: #FFECC7;
+  box-shadow: 1px 2px 4px rgba(181, 202, 255, 1);
+}
+
+.delete-img {
+  width: 34px;
+  height: 34px;
+}
+
+#delete-btn {
+  margin: 0 auto;
+  border: none;
+  width: 34px;
+  height: 34px;
+}
+
+.delete-img:hover {
+  box-shadow: 1px 1px 2px #809bff;
+  border-radius: 8px;
+  cursor: pointer;
 }
