@@ -41,7 +41,6 @@ function clearInputFieldEl() {
 }
 
 onValue(shoppingListInDB, function (snapshot) {
-console.log(snapshot.val());
   if (snapshot.exists()) {
     let itemsArray = Object.entries(snapshot.val());
     clearShopingListEl();
