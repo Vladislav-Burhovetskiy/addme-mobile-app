@@ -7,6 +7,7 @@ html, body {
 }
 
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     max-width: 320px;
@@ -18,17 +19,18 @@ img {
     margin: 0 auto;
 }
 
-input {
+#input-field {
     color: #432000;
     background-color: #d1deff;
     border: 0;
-    padding: 15px;
     border-radius: 8px;
-    font-size: 20px;
     text-align: center;
     font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    padding: 15px;
     margin: 10px 0;
     outline-color: #b5caff;
+    color: #a75235;
 }
 
 #add-button {
@@ -52,8 +54,10 @@ input {
 
 ul {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
+  color: #a75235;
   list-style-type: none;
   padding: 0;
   margin-bottom: 70px;
@@ -87,10 +91,13 @@ li:hover {
 }
 
 #delete-btn {
+  position: sticky;
+  bottom: 50px;
   margin: 0 auto;
   border: none;
   width: 34px;
   height: 34px;
+  background-color: rgba(181, 202, 255, 0);
 }
 
 .delete-img:hover {
