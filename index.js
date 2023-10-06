@@ -5,7 +5,7 @@ import {
   push,
   onValue,
   remove,
-  update
+  update,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -51,7 +51,7 @@ onValue(shoppingListInDB, function (snapshot) {
       appendItemToShoppingListEl(currentItem);
     }
   } else {
-    shoppingListEl.innerText = "No items here...yet"
+    shoppingListEl.innerText = "No items here...yet";
   }
 });
 
@@ -70,27 +70,24 @@ function appendItemToShoppingListEl(item) {
   if (itemObj.selected) {
     newLiEl.classList.add("selected");
   }
-  
+
   let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
 
   newLiEl.addEventListener("dblclick", () => {
-
     remove(exactLocationOfItemInDB);
   });
 
   newLiEl.addEventListener("click", () => {
-    newLiEl.classList.toggle("selected")
+    newLiEl.classList.toggle("selected");
 
     if (newLiEl.classList.contains("selected")) {
-      update(exactLocationOfItemInDB, {selected: true})
+      update(exactLocationOfItemInDB, { selected: true });
     } else {
-      update(exactLocationOfItemInDB, {selected: false})
+      update(exactLocationOfItemInDB, { selected: false });
     }
   });
-
 }
 
 deleteBtn.addEventListener("click", () => {
-    remove(shoppingListInDB);
-  }
-);
+  remove(shoppingListInDB);
+});
