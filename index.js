@@ -5,6 +5,7 @@ import {
   push,
   onValue,
   remove,
+  update
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -71,8 +72,9 @@ function appendItemToShoppingListEl(item) {
     newLiEl.classList.add("selected");
   }
   
+  let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
+
   newLiEl.addEventListener("dblclick", () => {
-    let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
 
     remove(exactLocationOfItemInDB);
   });
@@ -81,9 +83,9 @@ function appendItemToShoppingListEl(item) {
     newLiEl.classList.toggle("selected")
 
     if (newLiEl.classList.contains("selected")) {
-      itemObj.selected = true;
+      update(exactLocationOfItemInDB, {selected: true})
     } else {
-      itemObj.selected = false;
+      update(exactLocationOfItemInDB, {selected: false})
     }
   });
 
