@@ -20,12 +20,17 @@ const inputFieldEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-button");
 const shoppingListEl = document.getElementById("shopping-list");
 const deleteBtn = document.getElementById("delete-btn");
-const selectedItems = {};
+// const selectedItems = {};
 
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
+  // новий елемент з selected
+  const newItem = {
+    value: inputValue,
+    selected: false, // По замовчуванню, елемент не виділений
+  };
 
-  push(shoppingListInDB, inputValue);
+  push(shoppingListInDB, newItem);
 
   clearInputFieldEl();
 });
@@ -35,6 +40,7 @@ function clearInputFieldEl() {
 }
 
 onValue(shoppingListInDB, function (snapshot) {
+console.log(snapshot.val());
   if (snapshot.exists()) {
     let itemsArray = Object.entries(snapshot.val());
     clearShopingListEl();
@@ -55,13 +61,13 @@ function clearShopingListEl() {
 
 function appendItemToShoppingListEl(item) {
   let itemID = item[0];
-  let itemValue = item[1];
+  let itemObj = item[1];
 
   const newLiEl = document.createElement("li");
-  newLiEl.textContent = itemValue;
+  newLiEl.textContent = itemObj.value;
   shoppingListEl.append(newLiEl);
 
-  if (selectedItems[itemID]) {
+  if (itemObj.selected) {
     newLiEl.classList.add("selected");
   }
   
@@ -75,9 +81,9 @@ function appendItemToShoppingListEl(item) {
     newLiEl.classList.toggle("selected")
 
     if (newLiEl.classList.contains("selected")) {
-      selectedItems[itemID] = true;
+      itemObj.selected = true;
     } else {
-      delete selectedItems[itemID];
+      itemObj.selected = false;
     }
   });
 
