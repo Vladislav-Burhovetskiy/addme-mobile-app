@@ -22,7 +22,7 @@ html, body {
     display: flex;
     flex-direction: column;
     max-width: 320px;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 
 img {
@@ -194,4 +194,37 @@ li:nth-child(even) div p {
 
 #message li .liked {
   color: #FB7185;
+}
+
+
+/* NAVIGATION */
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 70px;
+  box-shadow: 0px 1px 4px #809bff;
+}
+
+.nav__lists {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.nav__link {
+  color: #a75235;
+  color: #809bff;
+  color: #d1deff;
+  text-shadow: 1px 1px 1px #809bff;
+}
+
+.nav__link i {
+  font-size: 1.4rem;
+  padding: 5px;
+  margin: 0;
+  margin-top: 20px;
 }
