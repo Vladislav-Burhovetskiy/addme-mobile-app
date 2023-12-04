@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: ['https://add-me.netlify.app'],
+  base: 'https://add-me.netlify.app',
+  plugins: [],
 });
