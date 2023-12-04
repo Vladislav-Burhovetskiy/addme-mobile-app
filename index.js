@@ -14,6 +14,17 @@ const appSettings = {
     "https://realtime-database-7acf7-default-rtdb.europe-west1.firebasedatabase.app/",
 };
 
+// Active link
+const currentPath = window.location.pathname;
+console.log(currentPath)
+const links = document.querySelectorAll(".nav__link");
+
+links.forEach((link) => {
+  if (link.getAttribute("href") === currentPath) {
+    link.classList.add("active");
+  }
+});
+
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const shoppingListInDB = ref(database, "shoppingList");
