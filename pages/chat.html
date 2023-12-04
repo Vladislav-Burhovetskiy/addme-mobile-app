@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Chat</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,40 +17,40 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../index.css" />
   </head>
   <body>
       <header class="header container">
         <nav class="nav">
           <ul class="nav__lists">
             <li class="nav-item">
-              <a href="./pages/tasks.html" class="nav__link">
+              <a href="./tasks.html" class="nav__link">
                 <i class="fa-solid fa-list-check"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./pages/addme.html" class="nav__link">
+              <a href="./addme.html" class="nav__link">
                 <i class="fa-solid fa-cart-plus"></i>
                 
               </a>
             </li>
             <li class="nav-item">
-              <a href="./pages/chat.html" class="nav__link">
+              <a href="./chat.html" class="nav__link">
                 <i class="fa-solid fa-comment-dots"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./pages/login.html" class="nav__link">
+              <a href="./login.html" class="nav__link">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
               </a>
             </li>
           </ul>
         </nav>
       </header>
-    <script src="index.js" type="module"></script>
+      
+      <main class="container">
+        <ul id="message"></ul>
+      </main>
+    <script src="../index.js" type="module"></script>
   </body>
 </html>
