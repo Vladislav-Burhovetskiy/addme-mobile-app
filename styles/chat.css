@@ -1,14 +1,78 @@
-#message {
+.chat {
+  background-color: #d1deff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat__type-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  /* margin: 10px 0; */
+  margin-bottom: 105px;
+  background-color: #eef0f4;
+  border-radius: 25px;
+  box-shadow: 1px 1px 4px rgba(181, 202, 255, 1);
+}
+
+.chat__type-field:hover {
+  box-shadow: 1px 1px 4px #809bff;
+}
+
+.chat__input {
+  background-color: #eef0f4;
+  border: none;
+  border-radius: 25px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  padding: 15px 20px;
+  /* margin: 10px 0; */
+  outline: none;
+  color: #a75235;
+}
+
+/* .chat__input::placeholder {
+  color: #432000;
+} */
+
+.chat__send-btn {
+  background-color: transparent;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.chat__send-btn i {
+  font-size: 20px;
+  color: #d1deff;
+  text-shadow: 1px 1px 2px #432000;
+  transition: all 0.15s ease-in-out;
+}
+
+.chat__send-btn:hover i {
+  color: #809bff;
+  text-shadow: 1px 1px 1px #FB7185;
+}
+
+.chat__send-btn:active i {
+  transform: scale(1.1);
+}
+
+.chat__messages {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
-  background-color: #d1deff;
-  padding: 80px 20px 70px;
-  /* padding: 20px; */
-  border-radius: 8px;
+  padding: 30px 10px 5px;
 }
 
-#message li {
+.chat__messages li {
   display: flex;
   align-items: center;
   border-radius: 0 8px 8px;
@@ -30,12 +94,12 @@ li i {
   margin-right: 10px;
 }
 
-#message li:nth-child(even) div {
+.chat__messages li:nth-child(even) div {
   border-radius: 8px 0 8px 8px;
   background-color: white;
 }
 
-#message li:nth-child(even) {
+.chat__messages li:nth-child(even) {
   margin-left: auto;
 }
 
@@ -63,10 +127,35 @@ li:nth-child(even) div p {
   cursor: pointer;
 }
 
-#message .fa-heart:hover {
+.chat__messages .fa-heart:hover {
   color: red;
 }
 
-#message li .liked {
+.chat__messages li .liked {
   color: #FB7185;
 }
+
+/* NAVIGATION */
+
+.nav .nav__link {
+  color: #eef0f4;
+  text-shadow: 1px 1px 1px gray;
+}
+.nav .nav__link:hover,
+.nav .active {
+  color: #eef0f4;
+  text-shadow: 1px 1px 1px #432000;
+}
+
+.nav .nav__link::before {
+  background-color: #eef0f4;
+  box-shadow: 0px 1px 1px #432000;
+}
+
+.nav .active::before {
+  opacity: 1;
+}
+
+/* .nav {
+  box-shadow: 0px -1px 10px #eef0f4;
+} */

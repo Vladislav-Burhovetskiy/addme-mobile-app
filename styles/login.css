@@ -1,0 +1,30 @@
+.login {
+  background-color: #ffc5a3;
+  height: 100vh;
+  width: 100%;
+}
+
+/* NAVIGATION */
+
+.nav .nav__link {
+  color: #eef0f4;
+  text-shadow: 1px 1px 1px gray;
+}
+.nav .nav__link:hover,
+.nav .active {
+  color: #eef0f4;
+  text-shadow: 1px 1px 1px #432000;
+}
+
+.nav .nav__link::before {
+  background-color: #eef0f4;
+  box-shadow: 0px 1px 1px #432000;
+}
+
+.nav .active::before {
+  opacity: 1;
+}
+
+.nav {
+  box-shadow: 0px -1px 4px #eef0f4;
+}

@@ -5,6 +5,9 @@
   left: 0;
   height: 90px;
   box-shadow: 0px -1px 4px rgba(181, 202, 255, 1);
+  /* border-top: 1px solid #ffecc7;
+  border-top: 1px solid #b5caff; */
+  background: #eef0f4;
   background: transparent;
 }
 
