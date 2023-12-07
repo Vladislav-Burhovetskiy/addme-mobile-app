@@ -27,7 +27,6 @@ sendMessageBtn.addEventListener("click", function () {
     };
 
     push(messageInDB, newMessage);
-
     clearInputFieldEl();
   }
 });
@@ -36,21 +35,6 @@ function clearInputFieldEl() {
   messageInput.value = "";
 }
 
-// onValue(shoppingListInDB, function (snapshot) {
-//   if (snapshot.exists()) {
-//     let itemsArray = Object.entries(snapshot.val());
-//     clearListEl(chatList);
-
-//     for (let i = 0; i < itemsArray.length; i++) {
-//       let currentItem = itemsArray[i];
-
-//       appendItemToShoppingListEl(currentItem);
-//     }
-//   } else {
-//     chatList.innerText = "No items here...yet";
-//   }
-// });
-
 onValue(messageInDB, function (snapshot) {
   if (snapshot.exists()) {
     if (messageEl) {
@@ -58,7 +42,7 @@ onValue(messageInDB, function (snapshot) {
     }
     let itemsArray = Object.entries(snapshot.val());
     clearListEl(messageEl);
-    console.log(itemsArray)
+    console.log(itemsArray);
 
     for (let i = 0; i < itemsArray.length; i++) {
       let currentItem = itemsArray[i];
@@ -74,33 +58,13 @@ function clearListEl(element) {
   element.innerHTML = "";
 }
 
-function appendItemToShoppingListEl(item) {
-  let itemID = item[0];
-  let itemObj = item[1];
-
-  const newLiEl = document.createElement("li");
-  newLiEl.textContent = itemObj.value;
-  chatList.append(newLiEl);
-
-  if (itemObj.selected) {
-    newLiEl.classList.add("selected");
-  }
-
-  let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
-
-}
-
 // RENDER
-
-function appendItemToMessageEl(currentItemID, currentItemObj) {
-  let itemID = currentItemID;
-  let itemObj = currentItemObj;
-
+function appendItemToMessageEl(itemID, itemObj) {
   const newLiEl = document.createElement("li");
   const messageTextContainer = document.createElement("div");
   const messageTextEl = document.createElement("h3");
   const dateMessageEl = document.createElement("p");
-  const likeEl = document.createElement("i"); // помилка вкладена i елемент
+  const likeEl = document.createElement("i");
 
   likeEl.className = `fa-solid fa-heart ${itemObj.isLiked ? "liked" : ""}`;
   likeEl.setAttribute("data-like", itemID);
@@ -119,6 +83,9 @@ function appendItemToMessageEl(currentItemID, currentItemObj) {
   messageEl.append(newLiEl);
 
   let exactLocationOfItemInDB = ref(database, `message/${itemID}`);
+  scrollToBottom();
+  // scrollToBottomSmooth();
+  // scrollToSmooth(chatList.scrollHeight, 500);
 
   newLiEl.addEventListener("dblclick", () => {
     remove(exactLocationOfItemInDB);
@@ -140,3 +107,9 @@ function handleLikeClick(messageId, itemID, itemObj) {
     update(exactLocationOfItemInDB, { isLiked: itemObj.isLiked });
   }
 }
+
+function scrollToBottom() {
+  chatList.scrollTop = chatList.scrollHeight;
+}
+
+$('#messages_container').animate({scrollTop:$('#messages_container').prop('scrollHeight')}, 1000);

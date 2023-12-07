@@ -1,6 +1,8 @@
 {
   "name": "project",
-  "dependencies": {},
+  "dependencies": {
+    "firebase": "^10.7.1"
+  },
   "devDependencies": {
     "vite": "latest"
   },

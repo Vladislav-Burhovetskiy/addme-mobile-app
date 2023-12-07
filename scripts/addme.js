@@ -1,11 +1,4 @@
-import {
-  database,
-  ref,
-  push,
-  onValue,
-  remove,
-  update,
-} from "./firebase.js";
+import { database, ref, push, onValue, remove, update } from "./firebase.js";
 
 const shoppingListInDB = ref(database, "shoppingList");
 
@@ -17,7 +10,6 @@ const deleteBtn = document.getElementById("delete-btn");
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
 
-  // новий елемент з selected
   if (inputValue) {
     const newItem = {
       value: inputValue,
