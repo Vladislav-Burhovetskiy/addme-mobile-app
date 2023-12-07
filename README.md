@@ -1,4 +1,4 @@
-# Shoping List Mobile App
+# Addme Mobile App
 
 Quick start:
 
