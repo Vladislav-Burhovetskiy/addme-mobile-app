@@ -1,5 +1,6 @@
 .chat {
-  background-color: #d1deff;
+  font-family: var(--primary-font);
+  background-color: var(--primary-light-color);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,30 +16,26 @@
   width: 100%;
   /* margin: 10px 0; */
   margin-bottom: 105px;
-  background-color: #eef0f4;
+  background-color: var(--secondary-light-color);
   border-radius: 25px;
-  box-shadow: 1px 1px 4px rgba(181, 202, 255, 1);
+  box-shadow: 1px 1px 4px var(--blue-shadow);
 }
 
 .chat__type-field:hover {
-  box-shadow: 1px 1px 4px #809bff;
+  box-shadow: 1px 1px 4px var(--primary-color);
 }
 
 .chat__input {
-  background-color: #eef0f4;
+  background-color: var(--secondary-light-color);
   border: none;
   border-radius: 25px;
-  font-family: "Rubik", sans-serif;
   font-size: 16px;
   padding: 15px 20px;
   /* margin: 10px 0; */
   outline: none;
-  color: #a75235;
+  color: var(--primary-text-color);
 }
 
-/* .chat__input::placeholder {
-  color: #432000;
-} */
 
 .chat__send-btn {
   background-color: transparent;
@@ -51,14 +48,14 @@
 
 .chat__send-btn i {
   font-size: 20px;
-  color: #d1deff;
-  text-shadow: 1px 1px 2px #432000;
+  color: var(--primary-light-color);
+  text-shadow: 1px 1px 2px  var(--dark-shadow);
   transition: all 0.15s ease-in-out;
 }
 
 .chat__send-btn:hover i {
-  color: #809bff;
-  text-shadow: 1px 1px 1px #FB7185;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 1px var(--liked-heart-color);
 }
 
 .chat__send-btn:active i {
@@ -90,10 +87,10 @@
 li div {
   display: flex;
   flex-direction: column;
-  background-color: #FFECC7;
+  background-color: var(--secondary-color);
   border-radius: 0 8px 8px;
   padding: 10px 15px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px var(--shadow-transparent);
 }
 
 li i {
@@ -103,7 +100,7 @@ li i {
 
 .chat__messages li:nth-child(even) div {
   border-radius: 8px 0 8px 8px;
-  background-color: white;
+  background-color: var(--light-color);
 }
 
 .chat__messages li:nth-child(even) {
@@ -117,7 +114,7 @@ li div h3 {
 }
 
 li div p {
-  color: gray;
+  color: var(--grey-color);
   font-size: 10px;
   text-align: end;
 }
@@ -128,35 +125,35 @@ li:nth-child(even) div p {
 }
 
 .fa-heart {
-  color: #f8f9fa;
+  color: var(--unliked-heart-color);
   font-size: 18px;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px var(--dark-color);
   cursor: pointer;
 }
 
 .chat__messages .fa-heart:hover {
-  color: red;
+  color: var(--hover-heart-color);
 }
 
 .chat__messages li .liked {
-  color: #FB7185;
+  color: var(--liked-heart-color);
 }
 
 /* NAVIGATION */
 
 .nav .nav__link {
-  color: #eef0f4;
-  text-shadow: 1px 1px 1px gray;
+  color: var(--secondary-light-color);
+  text-shadow: 1px 1px 1px var(--grey-color);
 }
 .nav .nav__link:hover,
 .nav .active {
-  color: #eef0f4;
-  text-shadow: 1px 1px 1px #432000;
+  color: var(--secondary-light-color);
+  text-shadow: 1px 1px 1px var(--dark-shadow);
 }
 
 .nav .nav__link::before {
-  background-color: #eef0f4;
-  box-shadow: 0px 1px 1px #432000;
+  background-color: var(--secondary-light-color);
+  box-shadow: 0px 1px 1px var(--dark-shadow);
 }
 
 .nav .active::before {
@@ -164,5 +161,5 @@ li:nth-child(even) div p {
 }
 
 /* .nav {
-  box-shadow: 0px -1px 10px #eef0f4;
+  box-shadow: 0px -1px 10px var(--secondary-light-color);
 } */

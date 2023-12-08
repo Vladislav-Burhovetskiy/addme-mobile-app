@@ -7,17 +7,17 @@
 /* NAVIGATION */
 
 .nav .nav__link {
-  color: #eef0f4;
+  color: var(--secondary-light-color);
   text-shadow: 1px 1px 1px gray;
 }
 .nav .nav__link:hover,
 .nav .active {
-  color: #eef0f4;
+  color: var(--secondary-light-color);
   text-shadow: 1px 1px 1px #432000;
 }
 
 .nav .nav__link::before {
-  background-color: #eef0f4;
+  background-color: var(--secondary-light-color);
   box-shadow: 0px 1px 1px #432000;
 }
 
@@ -26,5 +26,5 @@
 }
 
 .nav {
-  box-shadow: 0px -1px 4px #eef0f4;
+  box-shadow: 0px -1px 4px var(--secondary-light-color);
 }

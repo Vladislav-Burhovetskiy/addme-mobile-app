@@ -1,0 +1,51 @@
+:root {
+  --primary-color: #809bff;
+  --primary-light-color: #d1deff;
+  --secondary-color: #ffecc7;
+  --secondary-light-color: #eef0f4;
+  --post-color: #62eea8;
+  --delete-color: #ff9f9f;
+  --light-color: #ffffff;
+  --grey-color: #747e79;
+  --dark-color: #000000;
+  --primary-text-color: #a75235;
+  --secondary-text-color: ;
+
+  --dark-shadow: #432000;
+  --blue-shadow: #b5caff;
+  --shadow-transparent: rgba(0, 0, 0, 0.2);
+
+  /* PAGES COLORS */
+
+  /* Add me */
+  --btn-color: #ffc5a3;
+  --btn-hover-color: #ffd685;
+  --item-color: #fffdf8;
+
+  /* Chat */
+  --hover-heart-color: #ff0000;
+  --liked-heart-color: #fb7185;
+  --unliked-heart-color: #f8f9fa;
+
+  /* Navigation */
+  --active-color: #a0b6ff;
+  --background-color: #d6e1fe;
+
+  /* Profile */
+--background-light-color: #FFF6E8;
+/* --secondary-color: #FFE4BA; */
+
+  --primary-font: "Rubik", sans-serif;
+  --secondary-font: "Cabin", sans-serif;
+
+  --border-width: 3px;
+  --element-border-radius: 5px;
+
+  --button-height: 5px;
+
+  --small-button-height: 2px;
+
+  --element-padding: 0.8em;
+
+  --maximum-width: 320px;
+}

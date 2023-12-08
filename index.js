@@ -20,7 +20,7 @@ links.forEach((link) => {
 //   } else {
 //     addButtonEl.innerText = "Add to cart";
 //     addButtonEl.style.color = "white";
-//     addButtonEl.style.textShadow = "1px 1px 2px #809bff";
+//     addButtonEl.style.textShadow = "1px 1px 2px var(--primary-color)";
 //   }
 // }
 

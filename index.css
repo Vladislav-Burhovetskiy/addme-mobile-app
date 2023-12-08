@@ -1,8 +1,9 @@
 @import url(./styles/header.css);
+@import url(./styles/variebles.css);
 
 * {
   box-sizing: border-box;
-  outline-color: #b5caff;
+  outline-color: var(--blue-shadow);
 }
 
 body,
@@ -16,8 +17,8 @@ p {
 
 html,
 body {
-  font-family: "Rubik", sans-serif;
-  background-color: #eef0f4;
+  font-family: var(--primary-color);
+  background-color: var(--secondary-light-color);
   font-weight: 300;
 }
 
