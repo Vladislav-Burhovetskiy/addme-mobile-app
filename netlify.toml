@@ -1,0 +1,3 @@
+[build]
+  base = "/addme-mobile-app/"
+  publish = "dist/"
