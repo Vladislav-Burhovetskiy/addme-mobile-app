@@ -173,7 +173,7 @@ function showProfilePicture(imgElement, user) {
   if (photoURL) {
     imgElement.src = photoURL;
   } else {
-    imgElement.src = "assets/images/default-profile-picture.jpeg";
+    imgElement.src = "../assets/images/default-profile-picture.jpeg";
   }
 }
 
