@@ -1,5 +1,5 @@
 /* === Imports === */
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 
 import {
   getAuth,
@@ -10,13 +10,13 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   updateProfile,
-} from "firebase/auth";
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";;
 
-// import { auth } from "./firebase.js";
 const firebaseConfig = {
   apiKey: "AIzaSyAVeTUfURGxT-lORZ_woUMRRNyGCuvDHrQ",
   authDomain: "realtime-database-7acf7.firebaseapp.com",
-  databaseURL: "https://realtime-database-7acf7-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL:
+    "https://realtime-database-7acf7-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "realtime-database-7acf7",
   storageBucket: "realtime-database-7acf7.appspot.com",
 };
@@ -24,7 +24,7 @@ const firebaseConfig = {
 /* === Firebase Setup === */
 const provider = new GoogleAuthProvider();
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
+const auth = getAuth(app);
 /* === UI === */
 
 /* == UI - Elements == */

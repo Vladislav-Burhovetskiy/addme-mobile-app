@@ -13,6 +13,7 @@ h2 {
 .app-title {
   font-family: var(--primary-font);
   font-size: 2.5em;
+  margin-top: 40px;
 }
 
 /* === Sections === */
@@ -66,6 +67,7 @@ input, button {
   font-size: 1.1em;
   text-align: center;
   border: var(--border-width) solid var(--dark-color);
+  box-shadow: 3px 3px 3px 1px var(--shadow-transparent);
 }
 
 input:focus, button:focus {
@@ -103,7 +105,7 @@ button:hover {
 }
 
 .primary-btn {
-  background-color: var(--primary-color);
+  background-color: var(--primary-light-color);
   box-shadow: 0px var(--button-height) 0px 0px var(--dark-color);
   position: relative;
 }

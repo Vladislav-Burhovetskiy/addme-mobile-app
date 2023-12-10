@@ -38,8 +38,8 @@
   --primary-font: "Rubik", sans-serif;
   --secondary-font: "Cabin", sans-serif;
 
-  --border-width: 3px;
-  --element-border-radius: 5px;
+  --border-width: 1px;
+  --element-border-radius: 8px;
 
   --button-height: 5px;
 
